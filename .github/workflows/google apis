@@ -1,0 +1,16 @@
+API_KEY="YOUR_API_KEY"
+curl -H 'Content-Type: application/json' \
+     -d '{"contents":[
+            {"role": "user",
+              "parts":[{"text": "Give me five subcategories of jazz?"}]}]}' \
+     "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}"
+
+
+Ada di header:
+API_KEY="YOUR_API_KEY"
+curl -H 'Content-Type: application/json' \
+     -H "x-goog-api-key: ${API_KEY}" \
+     -d '{"contents":[
+            {"role": "user",
+              "parts":[{"text": "Give me five subcategories of jazz?"}]}]}' \
+     "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent"
